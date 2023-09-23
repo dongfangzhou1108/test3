@@ -51,13 +51,8 @@ private:
 };
 
 int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        printf("Usage: %s port\n", argv[0]);
-        return -1;
-    }
-
     evpp::EventLoop loop;
-    std::string addr = std::string("0.0.0.0:") + argv[1];
+    std::string addr = std::string("0.0.0.0:") + "7890";
     ChatServer server(&loop, addr);
     server.Start();
     loop.Run();
