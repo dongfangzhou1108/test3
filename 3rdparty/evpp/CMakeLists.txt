@@ -35,6 +35,11 @@ endif (UNIX)
 
 string (REPLACE ";" " " CMAKE_CXX_FLAGS "${CXX_FLAGS}")
 
+# @author dongfangzhou: find Libevent
+message("EVPP find_package Libevent from ### ${CMAKE_BINARY_DIR}/3rdparty ###")
+find_package(Libevent REQUIRED PATHS "${CMAKE_BINARY_DIR}/3rdparty/libevent")
+include_directories(${CMAKE_BINARY_DIR}/3rdparty)
+
 # @author dongfangzhou: delete [glog]
 if (UNIX)
     SET(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g -ggdb -D_DEBUG")
