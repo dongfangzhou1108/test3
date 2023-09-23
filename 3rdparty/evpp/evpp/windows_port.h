@@ -61,6 +61,8 @@
 
 #define EVPP_EXPORT
 
+// @author dongfangzhou: annotation for Visual Studio IDE
+/*
 // We must link against these libraries on windows platform for Visual Studio IDE
 #ifdef _WIN32
 #ifndef EVPP_EXPORTS
@@ -75,6 +77,7 @@
 #pragma comment(lib, "event_extra.lib") // libevent2.0
 #endif
 #endif
+*/
 
 
 
