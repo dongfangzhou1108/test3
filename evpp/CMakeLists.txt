@@ -37,16 +37,15 @@ string (REPLACE ";" " " CMAKE_CXX_FLAGS "${CXX_FLAGS}")
 
 # @author dongfangzhou: find Libevent
 message("EVPP find_package Libevent from ### ${CMAKE_BINARY_DIR}/3rdparty ###")
-find_package(Libevent REQUIRED PATHS "${CMAKE_BINARY_DIR}/3rdparty/libevent")
-include_directories(${CMAKE_BINARY_DIR}/3rdparty)
+find_package(Libevent REQUIRED)
 
 # @author dongfangzhou: delete [glog]
 if (UNIX)
     SET(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g -ggdb -D_DEBUG")
     SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -g -ggdb -DNDEBUG")
-    SET(DEPENDENT_LIBRARIES event pthread)
+    SET(DEPENDENT_LIBRARIES libevent::core libevent::extra pthread)
 else (UNIX)
-    SET(DEPENDENT_LIBRARIES event)
+    SET(DEPENDENT_LIBRARIES libevent::core libevent::extra)
 endif (UNIX)
 
 # @author dongfangzhou: in root cmake dir: [set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)]
