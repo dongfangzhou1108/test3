@@ -1,10 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(test_evpp)
+project(evpp_modify)
 
-# @author dongfangzhou: for windows libevent [.dll] cmake (from libevent cmake line-163)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-
-add_subdirectory(3rdparty)
-
-add_subdirectory(chatroom)
+add_subdirectory(evpp)
